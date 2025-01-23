@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", serif;
+}
+:root {
+  --primary-color: #755139ff;
+  --secondry-color: #d4b996ff;
+}
+body {
+  background-color: var(--primary-color);
+}
+html {
+  font-size: 75.5%;
+}
+
+.header {
+  width: 100%;
+  height: 500px;
+  color: var(--secondry-color);
+  box-shadow: 0 5px 10px var(--secondry-color);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.row1 ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(bg1.png);
+  clip-path: circle(60% at left 300px);
+  z-index: -1;
+}
+.row2 {
+  position: absolute;
+  top: 10px;
+  right: 150px;
+  text-align: center;
+}
+.row2 h2 {
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.row2 img {
+  margin-top: 30px;
+  width: 250px;
+}
+.row1 h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-left: 35px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search input {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  outline: 0;
+  border: 0;
+  width: 350px;
+  height: 35px;
+  padding: 0 0.9rem;
+  font-size: 15px;
+  font-weight: bold;
+}
+.search button {
+  outline: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 37px;
+  padding: 0 0.5rem;
+}
+.container {
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  box-sizing: border-box;
+}
+.container p {
+  font-size: 2rem;
+  color: var(--secondry-color);
+}
+.card {
+  background-color: var(--secondry-color);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 5px rgba(212, 185, 150, 0.5);
+  transition: 0.5s;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.card img {
+  width: 100%;
+  height: 170px;
+  border-radius: 1rem 1rem 0 0;
+}
+.card .bottom {
+  display: flex;
+  flex-direction: column;
+}
+.card .bottom .title {
+  font-size: 14px;
+  margin-bottom: 33px;
+}
+.card .bottom .amount {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: var(--secondry-color);
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0.2rem;
+}
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-inner {
+  background-color: white;
+  width: 700px;
+  height: 500px;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.overlay-inner .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.overlay-inner .inner-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.overlay-inner .inner-box img {
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+.overlay-inner .inner-box h3 {
+  margin-top: 10px;
+  color: green;
+}
+.overlay-inner .inner-box h4 {
+  color: blue;
+}
+.overlay-inner .inner-box button {
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #24a0ed;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+.overlay-inner .description {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 13px;
+  overflow: scroll;
+  height: 100%;
+}
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .header {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .row1 {
+    padding-top: 100px;
+  }
+  .row2 {
+    padding-bottom: 200px;
+  }
+  .row1 h1 {
+    padding-top: 100px;
+    font-size: 28px;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .container p {
+    font-size: 1.5rem;
+  }
+  .row1::before {
+    clip-path: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(bg1.png);
+    background-size: cover;
+  }
+
+  .row2 {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .search input {
+    width: 250px;
+  }
+  .row2 img {
+    display: none;
+  }
+  .card img {
+    height: 100px;
+  }
+  .overlay-inner {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .row2 h2 {
+    font-size: 2rem;
+  }
+  .row1 {
+    padding-top: 100px;
+  }
+  .row1 h1 {
+    font-size: 2rem;
+  }
+  .row2 {
+    padding-bottom: 170px;
+  }
+  .row2 img {
+    display: none;
+  }
+
+  .search input {
+    width: 200px;
+    font-size: 12px;
+  }
+  .container p {
+    font-size: 1rem;
+  }
+  .card img {
+    height: 100px;
+  }
+
+  .card .bottom .title {
+    font-size: 12px;
+  }
+
+  .card .bottom .amount {
+    font-size: 11px;
+  }
+  .overlay-inner {
+    height: 50%;
+    overflow: scroll;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr); /* Four cards per row */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    grid-template-columns: repeat(5, 1fr); /* Five cards per row */
+  }
+}
